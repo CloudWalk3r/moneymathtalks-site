@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salary to Hourly Calculator | Money Math Talks</title>
+  <meta name="description" content="Free salary to hourly calculator. Convert a yearly salary into hourly, weekly and monthly pay based on your real hours and weeks.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/salary-to-hourly/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Salary to Hourly Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Convert an annual salary into hourly, weekly and monthly pay."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Salary to Hourly Calculator</h1>
+  <p class="lead">Convert an annual salary into hourly, weekly and monthly pay.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>A yearly salary is hard to compare with hourly work or with another job that has different hours. Turning it into an hourly figure makes the comparison fair.
+
+Enter the yearly salary, the hours per week and the weeks worked per year. The calculator shows your hourly, weekly and monthly pay.</p></section>
+  <section><h2>How it works</h2><p>Hourly pay is the salary divided by hours per week times weeks per year. Weekly pay is the salary divided by weeks worked, and monthly pay is the salary divided by 12.
+
+The hours you enter matter a lot. If a job regularly needs extra unpaid hours, enter the hours you really work; the hourly figure will fall and show the true rate.</p></section>
+  <section><h2>Worked example</h2><p>A salary of 50,000.00 for 40 hours a week over 52 weeks works out to 24.04 an hour. That is 961.54 a week and 4,166.67 a month.</p>
+    <ul class="examples"><li>Salary to Hourly Calculator with salary = 50,000.00, hours = 40, weeks = 52: Hourly = 24.04; Weekly = 961.54; Monthly = 4,166.67.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Enter the hours you actually work, not just the contract hours.</li><li>Use this to compare two offers with different hours on a fair basis.</li><li>Results are before tax and deductions.</li><li>Reduce the weeks if you take unpaid time off.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>Is this before or after tax?</summary><p>Before tax. Take-home pay depends on local tax rules and deductions.</p></details><details><summary>Why does monthly pay divide by 12?</summary><p>A yearly salary is normally paid in 12 equal monthly parts, whatever the weeks.</p></details><details><summary>How do I compare two job offers?</summary><p>Run each offer with its real hours and compare the hourly figures.</p></details><details><summary>Is this financial advice?</summary><p>No. It is a conversion tool.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "salary", "label": "Annual salary", "default": 50000, "min": 100, "max": 100000000, "step": 100, "unit": "money"}, {"name": "hours", "label": "Hours per week", "default": 40, "min": 1, "max": 100, "step": 1, "unit": "number"}, {"name": "weeks", "label": "Paid weeks per year", "default": 52, "min": 1, "max": 52, "step": 1, "unit": "number"}], "outputs": [{"key": "hourly", "label": "Hourly", "unit": "money"}, {"key": "weekly", "label": "Weekly", "unit": "money"}, {"key": "monthly", "label": "Monthly", "unit": "money"}]}; window.CALC.fn = function(v){return {hourly:v.salary/(v.hours*v.weeks),monthly:v.salary/12,weekly:v.salary/v.weeks};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

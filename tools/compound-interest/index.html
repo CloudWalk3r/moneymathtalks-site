@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compound Interest Calculator | Money Math Talks</title>
+  <meta name="description" content="Free compound interest calculator. See how a starting amount and monthly additions grow, and how much of the final total is interest.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/compound-interest/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Compound Interest Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "See how a lump sum and monthly contributions grow with monthly compounding."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Compound Interest Calculator</h1>
+  <p class="lead">See how a lump sum and monthly contributions grow with monthly compounding.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>Compound interest means you earn interest on your interest, not just on the money you put in. Over short periods the effect looks small. Over long periods it often ends up as the biggest part of the final balance.
+
+Enter a starting amount, a yearly rate, a number of years and an optional monthly addition. The calculator shows the future value, the total you put in, and how much of the result is interest.</p></section>
+  <section><h2>How it works</h2><p>Each month, the balance grows by one twelfth of the yearly rate, and any monthly addition is added on top. The next month&#39;s growth is calculated on that new, larger balance, so the growth itself starts growing.
+
+The total you put in is simply your starting amount plus every monthly addition. Interest earned is the difference between the future value and that total. Keeping these two numbers apart makes it easy to see how much work the money did compared with how much work you did.
+
+The rate is an assumption, not a promise. Real returns move up and down from year to year, so treat the result as a picture of one steady scenario.</p></section>
+  <section><h2>Worked example</h2><p>Start with 1,000.00 at 5.00% for 10 years and add nothing. The balance grows to 1,647.01. You put in 1,000.00, so 647.01 is interest.
+
+Now start with 5,000.00 at 7.00% for 20 years and add 200.00 every month. The future value is 124,379.03. You put in 53,000.00 in total, which means 71,379.03 came from interest. In this case interest is larger than everything you contributed, and that is what a long time horizon does.</p>
+    <ul class="examples"><li>Compound Interest Calculator with principal = 1,000.00, rate = 5.00%, years = 10.0 years, monthly = 0.00: Future value = 1,647.01; Total you put in = 1,000.00; Interest earned = 647.01.</li><li>Compound Interest Calculator with principal = 5,000.00, rate = 7.00%, years = 20.0 years, monthly = 200.00: Future value = 124,379.03; Total you put in = 53,000.00; Interest earned = 71,379.03.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Change only one input at a time so you can see what each one really does.</li><li>Try the same inputs with more years; time usually moves the result more than the rate does.</li><li>Use a lower rate as a cautious scenario and a higher one as an optimistic scenario, then compare.</li><li>The calculator ignores fees and taxes, which reduce real results.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>How often is interest compounded here?</summary><p>Monthly. The yearly rate is divided by 12 and applied every month.</p></details><details><summary>Why is interest bigger than my contributions in long examples?</summary><p>Because each year&#39;s growth is calculated on a balance that already includes earlier growth. Given enough years, that snowball overtakes the money you added.</p></details><details><summary>Does this include fees or taxes?</summary><p>No. It shows the raw maths so you can compare scenarios. Fees and taxes would lower the future value.</p></details><details><summary>Is this financial advice?</summary><p>No. It is an educational tool that shows how the formula behaves with the numbers you enter.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "principal", "label": "Starting amount", "default": 1000, "min": 0, "max": 10000000, "step": 100, "unit": "money"}, {"name": "rate", "label": "Annual interest rate (%)", "default": 6, "min": 0, "max": 30, "step": 0.1, "unit": "percent"}, {"name": "years", "label": "Years", "default": 10, "min": 1, "max": 60, "step": 1, "unit": "years"}, {"name": "monthly", "label": "Monthly contribution", "default": 100, "min": 0, "max": 1000000, "step": 10, "unit": "money"}], "outputs": [{"key": "future_value", "label": "Future value", "unit": "money"}, {"key": "total_contributions", "label": "Total you put in", "unit": "money"}, {"key": "interest_earned", "label": "Interest earned", "unit": "money"}]}; window.CALC.fn = function(v){var i=v.rate/1200,m=Math.round(v.years*12),g=Math.pow(1+i,m);
+var fv=v.principal*g+(i?v.monthly*(g-1)/i:v.monthly*m);var c=v.principal+v.monthly*m;
+return {future_value:fv,total_contributions:c,interest_earned:fv-c};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

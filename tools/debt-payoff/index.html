@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Debt Payoff Calculator | Money Math Talks</title>
+  <meta name="description" content="Free debt payoff calculator. See how many months it takes to clear a balance at a fixed payment, and the total interest you pay.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/debt-payoff/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Debt Payoff Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "How many months a fixed monthly payment takes to clear a balance, and the interest paid."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Debt Payoff Calculator</h1>
+  <p class="lead">How many months a fixed monthly payment takes to clear a balance, and the interest paid.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>With high-interest debt, the size of your monthly payment decides almost everything: how long it takes and how much you pay in total.
+
+Enter the balance, the yearly interest rate and a fixed monthly payment. The calculator shows the months to pay it off, the total interest and the total paid.</p></section>
+  <section><h2>How it works</h2><p>Each month, interest is added at one twelfth of the yearly rate, and then your payment is subtracted. The calculator repeats this until the balance reaches zero and counts the months.
+
+If the payment is too small to cover the monthly interest, the balance never falls, and the calculator will tell you. Any amount above the interest goes straight to the balance, so a little extra each month shortens the payoff surprisingly fast.</p></section>
+  <section><h2>Worked example</h2><p>A balance of 5,000.00 at 20.00% with a payment of 200.00 a month takes 33 months to clear. Over that time you pay 6,521.71 in total, which includes 1,521.71 of interest.</p>
+    <ul class="examples"><li>Debt Payoff Calculator with balance = 5,000.00, apr = 20.00%, payment = 200.00: Months to pay off = 33 months; Total interest = 1,521.71; Total paid = 6,521.71.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Try raising the payment by a small amount to see how many months it saves.</li><li>Compare the total interest between two payment levels, not just the months.</li><li>Stopping new spending on the same balance matters as much as the payment.</li><li>Check your statement for the real rate; it may differ from the advertised one.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>Why does a small extra payment help so much?</summary><p>The interest part of each payment stays about the same, so every extra amount goes entirely to the balance.</p></details><details><summary>What if my payment only covers the interest?</summary><p>The balance will not go down. The calculator flags this so you can pick a higher payment.</p></details><details><summary>Does this include fees?</summary><p>No. Late fees or yearly charges would add to the total.</p></details><details><summary>Is this financial advice?</summary><p>No. It shows the payoff maths so you can compare options.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "balance", "label": "Balance", "default": 5000, "min": 10, "max": 10000000, "step": 10, "unit": "money"}, {"name": "apr", "label": "APR (%)", "default": 20, "min": 0, "max": 60, "step": 0.1, "unit": "percent"}, {"name": "payment", "label": "Monthly payment", "default": 200, "min": 1, "max": 1000000, "step": 1, "unit": "money"}], "outputs": [{"key": "months", "label": "Months to pay off", "unit": "months"}, {"key": "total_interest", "label": "Total interest", "unit": "money"}, {"key": "total_paid", "label": "Total paid", "unit": "money"}]}; window.CALC.fn = function(v){var i=v.apr/1200,n;if(i===0){n=v.balance/v.payment;}
+else if(v.payment<=v.balance*i){return {months:null,total_interest:null,total_paid:null};}
+else{n=-Math.log(1-v.balance*i/v.payment)/Math.log(1+i);}
+return {months:Math.ceil(n-1e-9),total_interest:v.payment*n-v.balance,total_paid:v.payment*n};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

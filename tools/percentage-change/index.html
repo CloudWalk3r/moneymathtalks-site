@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Percentage Change Calculator | Money Math Talks</title>
+  <meta name="description" content="Free percentage change calculator. Find the percent increase or decrease between two numbers and the difference between them.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/percentage-change/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Percentage Change Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "The percentage increase or decrease between two values."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Percentage Change Calculator</h1>
+  <p class="lead">The percentage increase or decrease between two values.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>Percent changes appear everywhere: prices, pay rises, results and discounts. They are also easy to get wrong in your head.
+
+Enter an old value and a new value. The calculator shows the percentage change and the plain difference.</p></section>
+  <section><h2>How it works</h2><p>Percentage change is the new value minus the old value, divided by the old value, times 100. A positive result is an increase and a negative result is a decrease.
+
+Because the change is always measured against the old value, a rise and a fall of the same percent do not cancel out. Halving a number needs a fall of half, but getting back needs a rise of 100.00%.</p></section>
+  <section><h2>Worked example</h2><p>Going from 80 to 100 is a difference of 20. Divide 20 by the old value of 80 and multiply by 100, and you get a 25.00% increase.</p>
+    <ul class="examples"><li>Percentage Change Calculator with old = 80, new = 100: Change (%) = 25.00%; Difference = 20.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Always check which number is the starting point; that is what the percent is measured against.</li><li>A fall followed by a rise of the same percent leaves you below where you started.</li><li>When rates change, say &#39;percentage points&#39; for the plain difference between two percents.</li><li>Use the difference figure when the actual amount matters more than the percent.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>Why do a rise and a fall of the same percent not cancel?</summary><p>The second change is measured from a different starting value, so it is a different amount.</p></details><details><summary>What is a percentage point?</summary><p>The plain gap between two percentages. A rate moving from 4 to 5 percent rises by 1 percentage point, which is a bigger percentage change.</p></details><details><summary>Can the result be negative?</summary><p>Yes. A negative result means the value went down.</p></details><details><summary>Is this financial advice?</summary><p>No. It is a maths tool.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "old", "label": "Original value", "default": 80, "min": -1000000000000.0, "max": 1000000000000.0, "step": 0.01, "unit": "number"}, {"name": "new", "label": "New value", "default": 100, "min": -1000000000000.0, "max": 1000000000000.0, "step": 0.01, "unit": "number"}], "outputs": [{"key": "change_pct", "label": "Change (%)", "unit": "percent"}, {"key": "difference", "label": "Difference", "unit": "number"}]}; window.CALC.fn = function(v){return {change_pct:(v["new"]-v.old)/v.old*100,difference:v["new"]-v.old};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

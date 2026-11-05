@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emergency Fund Calculator | Money Math Talks</title>
+  <meta name="description" content="Free emergency fund calculator. Set a target based on monthly expenses and see how long it takes to build at your saving rate.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/emergency-fund/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Emergency Fund Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Your emergency fund target, the gap to close, and months to get there."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Emergency Fund Calculator</h1>
+  <p class="lead">Your emergency fund target, the gap to close, and months to get there.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>An emergency fund is money set aside for surprises such as a lost job, a broken car or an urgent repair. Sizing it by months of expenses turns a vague goal into a clear number.
+
+Enter your monthly expenses, how many months you want covered, what you have saved and how much you can save each month. The calculator shows the target, the amount still to save and how many months it will take.</p></section>
+  <section><h2>How it works</h2><p>The target is monthly expenses times the months of cover. Subtract what you have already saved to get the amount still needed.
+
+Divide that by your monthly saving and round up to get the number of months to reach the target. Interest is ignored on purpose, because this money is usually kept somewhere safe and easy to reach rather than invested.</p></section>
+  <section><h2>Worked example</h2><p>With expenses of 2,000.00 a month and 6 months of cover, the target is 12,000.00. You already have 3,000.00, so 9,000.00 is still to save. Saving 400.00 a month, you reach the target in 23 months.</p>
+    <ul class="examples"><li>Emergency Fund Calculator with expenses = 2,000.00, months = 6 months, saved = 3,000.00, saving = 400.00: Target fund = 12,000.00; Still to save = 9,000.00; Months to reach it = 23 months.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Count essential expenses only: housing, food, transport, bills and minimum debt payments.</li><li>Fewer months of cover is a reasonable first milestone.</li><li>Steadier incomes may need fewer months; irregular incomes may need more.</li><li>Keep the fund separate from everyday spending so it is not used by accident.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>How many months should I cover?</summary><p>Common guidance ranges from 3 to 6 months of essential expenses, but it depends on how steady your income is.</p></details><details><summary>Why does it ignore interest?</summary><p>Emergency money is usually kept somewhere safe and instantly available, where interest is small.</p></details><details><summary>What if the time is too long?</summary><p>Try a smaller first target, or see how a slightly higher monthly saving changes it.</p></details><details><summary>Is this financial advice?</summary><p>No. It is a planning tool for the numbers you choose.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "expenses", "label": "Monthly essential expenses", "default": 2000, "min": 1, "max": 10000000, "step": 10, "unit": "money"}, {"name": "months", "label": "Months of cover", "default": 6, "min": 1, "max": 24, "step": 1, "unit": "months"}, {"name": "saved", "label": "Already saved", "default": 3000, "min": 0, "max": 100000000, "step": 10, "unit": "money"}, {"name": "saving", "label": "You can save per month", "default": 400, "min": 0, "max": 10000000, "step": 10, "unit": "money"}], "outputs": [{"key": "target", "label": "Target fund", "unit": "money"}, {"key": "gap", "label": "Still to save", "unit": "money"}, {"key": "months_to_goal", "label": "Months to reach it", "unit": "months"}]}; window.CALC.fn = function(v){var t=v.expenses*v.months,g=Math.max(t-v.saved,0);
+return {target:t,gap:g,months_to_goal:v.saving>0?Math.ceil(g/v.saving-1e-9):null};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FIRE Number Calculator | Money Math Talks</title>
+  <meta name="description" content="Free FIRE number calculator. Estimate the portfolio size needed to cover yearly expenses at a chosen withdrawal rate.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/fire-number/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "FIRE Number Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "The portfolio size implied by your yearly spending and a chosen withdrawal rate."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>FIRE Number Calculator</h1>
+  <p class="lead">The portfolio size implied by your yearly spending and a chosen withdrawal rate.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>FIRE stands for financial independence, retire early. Your FIRE number is the portfolio size that could cover your yearly expenses through withdrawals alone.
+
+Enter your yearly expenses and a withdrawal rate. The calculator shows the target portfolio and the monthly spending it supports.</p></section>
+  <section><h2>How it works</h2><p>The target is yearly expenses divided by the withdrawal rate. A lower rate is more cautious and gives a bigger target; a higher rate gives a smaller target but carries more risk of running short.
+
+Monthly spending is yearly expenses divided by 12. The withdrawal rate is a rule of thumb based on historical returns, not a guarantee, so many people test more than one rate.</p></section>
+  <section><h2>Worked example</h2><p>With yearly expenses of 30,000.00 and a 4.00% withdrawal rate, the target portfolio is 750,000.00. That supports spending of 2,500.00 a month.</p>
+    <ul class="examples"><li>FIRE Number Calculator with expenses = 30,000.00, withdrawal = 4.00%: Target portfolio = 750,000.00; Monthly spending = 2,500.00.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Lowering yearly expenses shrinks the target as well as making it easier to save.</li><li>Test a more cautious withdrawal rate to see how the target changes.</li><li>Include costs that may rise later, such as health insurance or home repairs.</li><li>The number is a planning target, not a guarantee of safety.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>What is a withdrawal rate?</summary><p>The share of the portfolio you take out each year to live on.</p></details><details><summary>Is 4 percent safe?</summary><p>It is a widely discussed rule of thumb, not a promise. Markets and timing can change the outcome.</p></details><details><summary>Should I include inflation?</summary><p>Enter expenses in today&#39;s money; the withdrawal rate idea already assumes spending rises with prices.</p></details><details><summary>Is this financial advice?</summary><p>No. It is an educational planning tool.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "expenses", "label": "Yearly expenses", "default": 30000, "min": 100, "max": 100000000, "step": 100, "unit": "money"}, {"name": "withdrawal", "label": "Withdrawal rate (%)", "default": 4, "min": 0.5, "max": 10, "step": 0.1, "unit": "percent"}], "outputs": [{"key": "fire_number", "label": "Target portfolio", "unit": "money"}, {"key": "monthly_expenses", "label": "Monthly spending", "unit": "money"}]}; window.CALC.fn = function(v){return {fire_number:v.expenses/(v.withdrawal/100),monthly_expenses:v.expenses/12};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

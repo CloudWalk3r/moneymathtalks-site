@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Savings Goal Calculator | Money Math Talks</title>
+  <meta name="description" content="Free savings goal calculator. Find how much to save each month to reach a target by a deadline, counting money you already have.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/savings-goal/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Savings Goal Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "How much to save each month to reach a target, counting growth on what you already have."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Savings Goal Calculator</h1>
+  <p class="lead">How much to save each month to reach a target, counting growth on what you already have.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>A savings goal becomes much easier once it turns into one monthly number. This calculator works backwards from the target and the deadline to tell you that number.
+
+Enter the goal, the number of years, an expected yearly rate and anything you have already saved. The calculator shows the monthly amount needed, what your current savings grow to, and the total you would add.</p></section>
+  <section><h2>How it works</h2><p>First the calculator grows your current savings to the deadline. Whatever is left of the goal has to come from monthly saving.
+
+It then finds the monthly amount that, with interest added each month, reaches exactly that gap by the deadline. Because the deposits earn a little interest along the way, the total you add is slightly less than the gap itself.
+
+The longer the deadline, the more months share the work, so the monthly amount drops quickly as you add time.</p></section>
+  <section><h2>Worked example</h2><p>Say the goal is 10,000.00 in 3 years at 4.00%, and you already have 1,000.00 saved. Those savings grow to 1,127.27 by the deadline. To cover the rest you need to save 232.38 a month, which adds up to 8,365.77 of your own money. Interest makes up the small difference.</p>
+    <ul class="examples"><li>Savings Goal Calculator with goal = 10,000.00, years = 3.0 years, rate = 4.00%, current = 1,000.00: Save each month = 232.38; Current savings grow to = 1,127.27; Total you add = 8,365.77.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Try a longer deadline before deciding a goal is out of reach.</li><li>Set the rate to 0 to see the plain amount you need without any growth.</li><li>Automating the monthly amount on payday makes it easier to stick with.</li><li>Rerun the numbers whenever your current savings change.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>What if I have nothing saved yet?</summary><p>Enter 0 for current savings. The monthly amount will rise to cover the whole goal.</p></details><details><summary>Why is the total I add less than the goal?</summary><p>Your existing savings and the interest on each deposit cover part of the goal.</p></details><details><summary>What rate should I enter?</summary><p>Whatever rate your savings actually earn. If you are unsure, compare a low and a higher figure.</p></details><details><summary>Is this financial advice?</summary><p>No. It is a planning tool that shows the maths for the numbers you choose.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "goal", "label": "Goal amount", "default": 10000, "min": 100, "max": 100000000, "step": 100, "unit": "money"}, {"name": "years", "label": "Years to goal", "default": 3, "min": 1, "max": 50, "step": 1, "unit": "years"}, {"name": "rate", "label": "Expected annual return (%)", "default": 4, "min": 0, "max": 20, "step": 0.1, "unit": "percent"}, {"name": "current", "label": "Already saved", "default": 1000, "min": 0, "max": 100000000, "step": 100, "unit": "money"}], "outputs": [{"key": "monthly_needed", "label": "Save each month", "unit": "money"}, {"key": "current_grows_to", "label": "Current savings grow to", "unit": "money"}, {"key": "total_you_add", "label": "Total you add", "unit": "money"}]}; window.CALC.fn = function(v){var i=v.rate/1200,m=Math.round(v.years*12),gr=v.current*Math.pow(1+i,m);
+var gap=Math.max(v.goal-gr,0);var mo=i?gap*i/(Math.pow(1+i,m)-1):gap/m;
+return {monthly_needed:mo,current_grows_to:gr,total_you_add:mo*m};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

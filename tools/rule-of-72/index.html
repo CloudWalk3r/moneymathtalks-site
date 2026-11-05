@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rule of 72 Calculator | Money Math Talks</title>
+  <meta name="description" content="Free Rule of 72 calculator. Estimate how many years it takes money to double at a given rate, and compare with the exact answer.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/rule-of-72/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Rule of 72 Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Estimate how long money takes to double, and compare with the exact answer."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Rule of 72 Calculator</h1>
+  <p class="lead">Estimate how long money takes to double, and compare with the exact answer.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>The Rule of 72 is a quick mental shortcut: divide 72 by a yearly growth rate and you get roughly how many years it takes for money to double.
+
+Enter a rate and the calculator shows the Rule of 72 estimate next to the exact doubling time, so you can see how close the shortcut is.</p></section>
+  <section><h2>How it works</h2><p>The estimate is simply 72 divided by the rate. The exact figure uses logarithms to find when growth multiplies the starting amount by 2.
+
+The shortcut works best for moderate rates. It drifts a little at very low or very high rates, but it is close enough for quick comparisons in your head.
+
+The same rule works for anything that grows at a steady rate, including prices under inflation and debt that is not being paid down.</p></section>
+  <section><h2>Worked example</h2><p>At 8.00%, 72 divided by 8 gives 9.0 years, and the exact answer is also 9.0 years.
+
+At 12.00%, the estimate is 6.0 years and the exact answer is 6.1 years. The shortcut is off by only a fraction of a year.</p>
+    <ul class="examples"><li>Rule of 72 Calculator with rate = 8.00%: Rule of 72 estimate (years) = 9.0 years; Exact doubling time (years) = 9.0 years.</li><li>Rule of 72 Calculator with rate = 12.00%: Rule of 72 estimate (years) = 6.0 years; Exact doubling time (years) = 6.1 years.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Use it in reverse: to double in 6 years you need roughly 12.00% a year.</li><li>Apply it to debt too; a balance growing at a high rate doubles quickly if left alone.</li><li>Apply it to inflation to see how fast prices could double.</li><li>For exact planning, use the exact figure rather than the estimate.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>Why 72?</summary><p>It divides evenly by many common rates and happens to give a close answer for typical rates.</p></details><details><summary>How accurate is it?</summary><p>Very close for moderate rates. The calculator shows the exact answer beside it so you can check.</p></details><details><summary>Does it work for debt?</summary><p>Yes. Any balance growing at a steady rate doubles in roughly 72 divided by the rate years.</p></details><details><summary>Is this financial advice?</summary><p>No. It is a mental-maths shortcut explained with examples.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "rate", "label": "Annual return (%)", "default": 8, "min": 0.1, "max": 50, "step": 0.1, "unit": "percent"}], "outputs": [{"key": "rule_of_72_years", "label": "Rule of 72 estimate (years)", "unit": "years"}, {"key": "exact_years", "label": "Exact doubling time (years)", "unit": "years"}]}; window.CALC.fn = function(v){return {rule_of_72_years:72/v.rate,exact_years:Math.log(2)/Math.log(1+v.rate/100)};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

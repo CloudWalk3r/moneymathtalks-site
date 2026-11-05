@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real Return Calculator | Money Math Talks</title>
+  <meta name="description" content="Free real return calculator. See what a return is worth after inflation, so you know how much buying power you actually gained.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/real-return/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Real Return Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Your return after inflation, using the exact (Fisher) formula."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Real Return Calculator</h1>
+  <p class="lead">Your return after inflation, using the exact (Fisher) formula.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>A return of a few percent sounds like progress, but if prices rose almost as fast, your buying power barely moved. The real return is the growth left after inflation.
+
+Enter a nominal return and an inflation rate. The calculator shows the real return.</p></section>
+  <section><h2>How it works</h2><p>The exact formula divides 1 plus the nominal return by 1 plus inflation, then subtracts 1. A quick shortcut is to subtract inflation from the return, which gives a slightly higher figure.
+
+If inflation is higher than the return, the real return is negative: the balance grows but buys less than before.</p></section>
+  <section><h2>Worked example</h2><p>A nominal return of 7.00% with inflation at 3.00% gives a real return of 3.88%. The quick shortcut would say 4, so the exact formula is a little lower.</p>
+    <ul class="examples"><li>Real Return Calculator with nominal = 7.00%, inflation = 3.00%: Real return (%) = 3.88%.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Compare savings rates against inflation, not against zero.</li><li>Use the real return for long-term plans written in today&#39;s money.</li><li>Fees reduce the nominal return before inflation is even counted.</li><li>Try a higher inflation rate to see how quickly real growth disappears.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>What is a nominal return?</summary><p>The headline return before adjusting for inflation.</p></details><details><summary>Why not just subtract inflation?</summary><p>Subtracting is a good estimate, but the exact formula accounts for growth compounding on growth.</p></details><details><summary>Can a real return be negative?</summary><p>Yes, whenever inflation is higher than the nominal return.</p></details><details><summary>Is this financial advice?</summary><p>No. It is an educational tool.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "nominal", "label": "Nominal return (%)", "default": 7, "min": -50, "max": 100, "step": 0.1, "unit": "percent"}, {"name": "inflation", "label": "Inflation (%)", "default": 3, "min": -10, "max": 100, "step": 0.1, "unit": "percent"}], "outputs": [{"key": "real_return_pct", "label": "Real return (%)", "unit": "percent"}]}; window.CALC.fn = function(v){return {real_return_pct:((1+v.nominal/100)/(1+v.inflation/100)-1)*100};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

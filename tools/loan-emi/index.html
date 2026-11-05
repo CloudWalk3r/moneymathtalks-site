@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan EMI Calculator | Money Math Talks</title>
+  <meta name="description" content="Free loan EMI calculator. Find the monthly payment for any loan, plus the total you pay back and how much of it is interest.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/loan-emi/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Loan EMI Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Monthly installment, total paid and total interest for a fixed-rate loan."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Loan EMI Calculator</h1>
+  <p class="lead">Monthly installment, total paid and total interest for a fixed-rate loan.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>EMI stands for equated monthly instalment: the same payment every month until the loan is gone. The monthly figure is what most people look at, but the total interest tells you what the loan really costs.
+
+Enter the amount borrowed, the yearly interest rate and the term in years. The calculator shows the monthly payment, the total paid and the total interest.</p></section>
+  <section><h2>How it works</h2><p>The payment is set so that the loan reaches exactly zero at the end of the term. Early payments are mostly interest, because the balance is still large. As the balance falls, more of each payment goes to the amount you borrowed.
+
+The total paid is the monthly payment multiplied by the number of months. Subtract the amount borrowed and you get the total interest.
+
+A longer term lowers the monthly payment but keeps the balance high for longer, so more interest builds up. That trade-off is the most important thing this calculator shows.</p></section>
+  <section><h2>Worked example</h2><p>Borrow 20,000.00 at 9.00% for 5 years. The monthly payment is 415.17, you pay back 24,910.03 in total, and 4,910.03 of that is interest.
+
+Now a larger, longer loan: 250,000.00 at 6.50% for 30 years. The payment is 1,580.17 a month. Over the full term you pay 568,861.22, so the interest is 318,861.22, more than the amount borrowed.</p>
+    <ul class="examples"><li>Loan EMI Calculator with principal = 20,000.00, rate = 9.00%, years = 5.0 years: Monthly payment (EMI) = 415.17; Total paid = 24,910.03; Total interest = 4,910.03.</li><li>Loan EMI Calculator with principal = 250,000.00, rate = 6.50%, years = 30.0 years: Monthly payment (EMI) = 1,580.17; Total paid = 568,861.22; Total interest = 318,861.22.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Compare loans by total interest, not only by monthly payment.</li><li>Try the same loan with a shorter term to see how much interest a higher payment avoids.</li><li>Lenders may add fees, so the real cost can be higher than this result.</li><li>Small rate differences matter more on large balances and long terms.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>What does EMI mean?</summary><p>Equated monthly instalment: a fixed payment that covers both interest and part of the amount borrowed every month.</p></details><details><summary>Why does a longer loan cost more?</summary><p>The balance stays high for more months, and interest is charged on the balance each month.</p></details><details><summary>Why might my lender&#39;s figure differ?</summary><p>Lenders can use different compounding rules, fees or insurance. Use this as a check, and ask the lender for the full cost.</p></details><details><summary>Is this financial advice?</summary><p>No. It shows the standard formula so you can compare scenarios yourself.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "principal", "label": "Loan amount", "default": 20000, "min": 100, "max": 100000000, "step": 100, "unit": "money"}, {"name": "rate", "label": "Annual interest rate (%)", "default": 9, "min": 0, "max": 40, "step": 0.1, "unit": "percent"}, {"name": "years", "label": "Term (years)", "default": 5, "min": 1, "max": 40, "step": 1, "unit": "years"}], "outputs": [{"key": "monthly_payment", "label": "Monthly payment (EMI)", "unit": "money"}, {"key": "total_paid", "label": "Total paid", "unit": "money"}, {"key": "total_interest", "label": "Total interest", "unit": "money"}]}; window.CALC.fn = function(v){var i=v.rate/1200,m=Math.round(v.years*12);
+var e=i?v.principal*i*Math.pow(1+i,m)/(Math.pow(1+i,m)-1):v.principal/m;
+return {monthly_payment:e,total_paid:e*m,total_interest:e*m-v.principal};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Break-Even Calculator | Money Math Talks</title>
+  <meta name="description" content="Free break-even calculator. Find how many units you must sell to cover fixed costs, the break-even revenue and the margin per unit.">
+  <link rel="canonical" href="https://cloudwalk3r.github.io/moneymathtalks-site/tools/break-even/">
+  <link rel="alternate" type="application/rss+xml" title="Money Math Talks" href="https://cloudwalk3r.github.io/moneymathtalks-site/rss.xml">
+  <link rel="stylesheet" href="/moneymathtalks-site/static/style.css">
+  
+  
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Break-Even Calculator", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Units you must sell to cover fixed costs, given price and variable cost per unit."}</script>
+
+</head>
+<body>
+  <header class="top"><a class="brand" href="/moneymathtalks-site/">Money Math Talks</a>
+    <nav><a href="/moneymathtalks-site/#tools">Tools</a><a href="/moneymathtalks-site/#guides">Guides</a><a href="/moneymathtalks-site/#templates">Templates</a></nav>
+  </header>
+  <main>
+<article class="tool">
+  <h1>Break-Even Calculator</h1>
+  <p class="lead">Units you must sell to cover fixed costs, given price and variable cost per unit.</p>
+  <form id="calc" class="calc" onsubmit="return false"></form>
+  <div id="results" class="results" aria-live="polite"></div>
+  
+  <section><p>Break-even is the point where sales cover all costs and you stop losing money. Below it every sale is chipping away at a loss; above it every sale adds profit.
+
+Enter your fixed costs, the price per unit and the variable cost per unit. The calculator shows the units you need to sell, the revenue at that point and the margin each unit contributes.</p></section>
+  <section><h2>How it works</h2><p>Each unit sold earns its price but costs its variable cost to make or deliver. The difference is the margin per unit, and that margin is what pays off the fixed costs.
+
+Divide fixed costs by the margin per unit and round up, because you cannot sell part of a unit. Multiply those units by the price to get break-even revenue.
+
+A higher price or a lower variable cost both widen the margin, which lowers the number of units you need.</p></section>
+  <section><h2>Worked example</h2><p>With fixed costs of 2,000.00, a price of 25.00 and a variable cost of 10.00, each unit leaves a margin of 15.00. Covering 2,000.00 takes 134 units, which means 3,350.00 in revenue before you make any profit.</p>
+    <ul class="examples"><li>Break-Even Calculator with fixed = 2,000.00, price = 25.00, variable = 10.00: Break-even units = 134; Break-even revenue = 3,350.00; Margin per unit = 15.00.</li></ul></section>
+  <section><h2>Notes</h2><ul><li>Test a small price change and a small cost cut to see which moves break-even more.</li><li>Include every monthly fixed cost, such as rent, software and insurance.</li><li>Variable costs include payment fees and shipping, not just materials.</li><li>Break-even is a minimum target, not a goal.</li></ul></section>
+  <section><h2>FAQ</h2><details><summary>What counts as a fixed cost?</summary><p>Costs that stay the same no matter how many units you sell, such as rent or subscriptions.</p></details><details><summary>What counts as a variable cost?</summary><p>Costs that rise with each unit sold, such as materials, packaging or per-sale fees.</p></details><details><summary>Why are units rounded up?</summary><p>You cannot sell part of a unit, so you need the next whole unit to fully cover costs.</p></details><details><summary>Is this financial advice?</summary><p>No. It is a planning tool for checking the maths of a price.</p></details></section>
+  
+</article>
+<script>window.CALC = {"fields": [{"name": "fixed", "label": "Fixed costs", "default": 2000, "min": 0, "max": 100000000, "step": 10, "unit": "money"}, {"name": "price", "label": "Price per unit", "default": 25, "min": 0.01, "max": 1000000, "step": 0.01, "unit": "money"}, {"name": "variable", "label": "Variable cost per unit", "default": 10, "min": 0, "max": 1000000, "step": 0.01, "unit": "money"}], "outputs": [{"key": "units", "label": "Break-even units", "unit": "number"}, {"key": "revenue", "label": "Break-even revenue", "unit": "money"}, {"key": "margin_per_unit", "label": "Margin per unit", "unit": "money"}]}; window.CALC.fn = function(v){var mg=v.price-v.variable;if(mg<=0){return {units:null,revenue:null,margin_per_unit:mg};}
+var u=Math.ceil(v.fixed/mg-1e-9);return {units:u,revenue:u*v.price,margin_per_unit:mg};};</script>
+<script src="/moneymathtalks-site/static/calc.js"></script>
+</main>
+  <footer>
+    
+    <p class="small">Educational content only, not financial advice. Made with AI-assisted tools; facts are checked against the sources listed.</p>
+    <p class="small"><a href="/moneymathtalks-site/about/">About</a> · <a href="/moneymathtalks-site/privacy/">Privacy</a> · <a href="/moneymathtalks-site/rss.xml">RSS</a> · © 2026 Money Math Talks</p>
+  </footer>
+</body>
+</html>
